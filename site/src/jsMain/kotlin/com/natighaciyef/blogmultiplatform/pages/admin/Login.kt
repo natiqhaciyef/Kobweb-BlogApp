@@ -6,6 +6,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import com.natighaciyef.blogmultiplatform.models.Theme
+import com.natighaciyef.blogmultiplatform.styles.LoginInputStyle
 import com.natighaciyef.blogmultiplatform.util.Constants
 import com.natighaciyef.blogmultiplatform.util.Res
 import com.varabyte.kobweb.compose.css.FontWeight
@@ -33,6 +34,7 @@ import com.varabyte.kobweb.compose.ui.modifiers.width
 import com.varabyte.kobweb.compose.ui.toAttrs
 import com.varabyte.kobweb.core.Page
 import com.varabyte.kobweb.silk.components.graphics.Image
+import com.varabyte.kobweb.silk.components.style.toModifier
 import com.varabyte.kobweb.silk.components.text.SpanText
 import com.varabyte.kobweb.silk.components.text.SpanTextStyle
 import org.jetbrains.compose.web.attributes.InputType
@@ -67,7 +69,7 @@ fun LoginScreen() {
 
             Input(
                 type = InputType.Text,
-                attrs = Modifier
+                attrs = LoginInputStyle.toModifier()
                     .margin(bottom = 12.px)
                     .width(350.px)
                     .height(54.px)
@@ -75,7 +77,6 @@ fun LoginScreen() {
                     .fontFamily(Constants.FONT_FAMILY)
                     .background(Colors.White)
                     .fontSize(16.px)
-                    .border(width = 0.px, style = LineStyle.None, color = Colors.Transparent)
                     .outline(width = 0.px, style = LineStyle.None, color = Colors.Transparent)
                     .toAttrs {
                         attr("placeholder", "Username")
@@ -84,7 +85,7 @@ fun LoginScreen() {
 
             Input(
                 type = InputType.Password,
-                attrs = Modifier
+                attrs = LoginInputStyle.toModifier()
                     .margin(bottom = 20.px)
                     .width(350.px)
                     .height(54.px)
@@ -92,7 +93,6 @@ fun LoginScreen() {
                     .background(Colors.White)
                     .fontFamily(Constants.FONT_FAMILY)
                     .fontSize(16.px)
-                    .border(width = 0.px, style = LineStyle.None, color = Colors.Transparent)
                     .outline(width = 0.px, style = LineStyle.None, color = Colors.Transparent)
                     .toAttrs {
                         attr("placeholder", "Password")
